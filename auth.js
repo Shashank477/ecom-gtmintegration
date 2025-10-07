@@ -45,7 +45,7 @@ async function loginUser() {
         await window.dataLayer.push({
      'event': 'login',  // Custom event for registration
      'email': email,
-     'time': Date()
+     'eventTimeout': 5000 
    });
         alert("Login successful!");
         window.location.href = "home.html";
