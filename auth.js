@@ -4,14 +4,6 @@ function registerUser() {
     let phone = document.getElementById('regPhone').value;
     let email = document.getElementById('regEmail').value;
     let password = document.getElementById('regPassword').value;
-    
-
-    if (!(name && phone && email && password)) {
-        alert("Please fill all fields");
-        return;
-    }
-
-    localStorage.setItem('user', JSON.stringify({ name, phone, email, password }));
 
     console.log("data layer is pushing")
     window.dataLayer.push({
@@ -24,7 +16,14 @@ function registerUser() {
    console.log('✅ Registration data sent to GTM:', {
      name, email, phone
    });
+    
 
+    if (!(name && phone && email && password)) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    localStorage.setItem('user', JSON.stringify({ name, phone, email, password }));
 
     alert("Registration successful!");
     window.location.href = "index.html";
