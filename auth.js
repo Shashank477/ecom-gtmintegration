@@ -25,7 +25,7 @@ async function registerUser() {
    });
 
     alert("Registration successful!");
-    //window.location.href = "index.html";
+    window.location.href = "index.html";
 }
 
 // Login Logic
