@@ -1,5 +1,5 @@
 // Registration Logic
-function registerUser() {
+async function registerUser() {
     let name = document.getElementById('regName').value;
     let phone = document.getElementById('regPhone').value;
     let email = document.getElementById('regEmail').value;
@@ -13,7 +13,7 @@ function registerUser() {
     localStorage.setItem('user', JSON.stringify({ name, phone, email, password }));
 
     console.log("data layer is pushing")
-    window.dataLayer.push({
+    await window.dataLayer.push({
      'event': 'user_register',  // Custom event for registration
      'name': name,
      'email': email,
@@ -25,7 +25,7 @@ function registerUser() {
    });
 
     alert("Registration successful!");
-    window.location.href = "index.html";
+    //window.location.href = "index.html";
 }
 
 // Login Logic
