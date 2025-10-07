@@ -17,7 +17,7 @@ function registerUser() {
     console.log("data layer is pushing")
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-     'event': 'user_registration',  // Custom event for registration
+     'event': 'user_register',  // Custom event for registration
      'name': name,
      'email': email,
      'phone': phone,
