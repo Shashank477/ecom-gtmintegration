@@ -29,7 +29,7 @@ async function registerUser() {
 }
 
 // Login Logic
-function loginUser() {
+async function loginUser() {
     let email = document.getElementById('loginEmail').value;
     let password = document.getElementById('loginPassword').value;
 
@@ -42,6 +42,11 @@ function loginUser() {
 
     if (user.email === email && user.password === password) {
         localStorage.setItem('loggedIn', true);
+        await window.dataLayer.push({
+     'event': 'login',  // Custom event for registration
+     'email': email,
+     'time': Date()
+   });
         alert("Login successful!");
         window.location.href = "home.html";
     } else {
