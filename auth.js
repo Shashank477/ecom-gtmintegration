@@ -4,7 +4,7 @@ function registerUser() {
     let phone = document.getElementById('regPhone').value;
     let email = document.getElementById('regEmail').value;
     let password = document.getElementById('regPassword').value;
-    window.dataLayer = window.dataLayer || [];
+    
 
     if (!(name && phone && email && password)) {
         alert("Please fill all fields");
@@ -15,12 +15,12 @@ function registerUser() {
 
 
     console.log("data layer is pushing")
+    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
      'event': 'user_registration',  // Custom event for registration
      'name': name,
      'email': email,
      'phone': phone,
-     'user_status': 'registered'
    });
   
    console.log('✅ Registration data sent to GTM:', {
