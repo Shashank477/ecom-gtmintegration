@@ -5,6 +5,20 @@ function registerUser() {
     let email = document.getElementById('regEmail').value;
     let password = document.getElementById('regPassword').value;
 
+    window.dataLayer = window.dataLayer || [];
+   window.dataLayer.push({
+     'event': 'user_registration',  // Custom event for registration
+     'name': name,
+     'email': email,
+     'phone': phone,
+     'user_status': 'registered'
+   });
+  
+   console.log('✅ Registration data sent to GTM:', {
+     name, email, phone
+   });
+
+
     if (!(name && phone && email && password)) {
         alert("Please fill all fields");
         return;
