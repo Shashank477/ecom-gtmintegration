@@ -5,8 +5,14 @@ function registerUser() {
     let email = document.getElementById('regEmail').value;
     let password = document.getElementById('regPassword').value;
 
-    window.dataLayer = window.dataLayer || [];
-   window.dataLayer.push({
+    if (!(name && phone && email && password)) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    localStorage.setItem('user', JSON.stringify({ name, phone, email, password }));
+
+    window.dataLayer.push({
      'event': 'user_registration',  // Custom event for registration
      'name': name,
      'email': email,
@@ -19,12 +25,6 @@ function registerUser() {
    });
 
 
-    if (!(name && phone && email && password)) {
-        alert("Please fill all fields");
-        return;
-    }
-
-    localStorage.setItem('user', JSON.stringify({ name, phone, email, password }));
     alert("Registration successful!");
     window.location.href = "index.html";
 }
