@@ -6,13 +6,12 @@ function registerUser() {
     let password = document.getElementById('regPassword').value;
     
 
-    // if (!(name && phone && email && password)) {
-    //     alert("Please fill all fields");
-    //     return;
-    // }
+    if (!(name && phone && email && password)) {
+        alert("Please fill all fields");
+        return;
+    }
 
-    // localStorage.setItem('user', JSON.stringify({ name, phone, email, password }));
-
+    localStorage.setItem('user', JSON.stringify({ name, phone, email, password }));
 
     console.log("data layer is pushing")
     window.dataLayer.push({
@@ -28,7 +27,7 @@ function registerUser() {
 
 
     alert("Registration successful!");
-    //window.location.href = "index.html";
+    window.location.href = "index.html";
 }
 
 // Login Logic
@@ -45,6 +44,10 @@ function loginUser() {
 
     if (user.email === email && user.password === password) {
         localStorage.setItem('loggedIn', true);
+        window.dataLayer.push({
+     'event': 'user_login',  // Custom event for registration
+     'email': email
+   });
         alert("Login successful!");
         window.location.href = "home.html";
     } else {
