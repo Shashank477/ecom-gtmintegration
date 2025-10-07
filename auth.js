@@ -6,12 +6,12 @@ function registerUser() {
     let password = document.getElementById('regPassword').value;
     
 
-    if (!(name && phone && email && password)) {
-        alert("Please fill all fields");
-        return;
-    }
+    // if (!(name && phone && email && password)) {
+    //     alert("Please fill all fields");
+    //     return;
+    // }
 
-    localStorage.setItem('user', JSON.stringify({ name, phone, email, password }));
+    // localStorage.setItem('user', JSON.stringify({ name, phone, email, password }));
 
 
     console.log("data layer is pushing")
@@ -29,7 +29,7 @@ function registerUser() {
 
 
     alert("Registration successful!");
-    window.location.href = "index.html";
+    //window.location.href = "index.html";
 }
 
 // Login Logic
