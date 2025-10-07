@@ -4,7 +4,6 @@ function registerUser() {
     let phone = document.getElementById('regPhone').value;
     let email = document.getElementById('regEmail').value;
     let password = document.getElementById('regPassword').value;
-    window.dataLayer = window.dataLayer || [];
     
 
     if (!(name && phone && email && password)) {
